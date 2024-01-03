@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .key{
+        transition: all 0.09s;
+    }
+    kbd{
+        display: block;
+        font-size: 40px;
+    }
+    .playing{
+        transform: scale(2);
+        background-color: red;
+        border-color: #ffc600;
+    }
+</style>
+<body>
+    <div class="keys">
+        <div data-key="65" class="key">
+          <kbd>A</kbd>
+        
+        </div>
+    <div data-key="83" class="key">
+        <kbd>S</kbd>
+       
+    </div>
+    </div>
+
+    <audio data-key="65" src="fist-punch-or-kick-7171.mp3"></audio>
+   <audio data-key="83" src="kick-sounds-38706.mp3"></audio>
+   <script>
+window.addEventListener('keydown',function(a) {
+   const audio=document.querySelector(`audio[data-key="${a.keyCode}"]`);
+    if(!audio)return;
+    audio.currentTime=0;
+    audio.play();
+    key.classList.add('playing');
+});
+    </script>
+</body>
+</html>
